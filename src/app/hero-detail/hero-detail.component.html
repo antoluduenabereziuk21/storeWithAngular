@@ -1,0 +1,12 @@
+<!--Currently, you have a list in the component template. To show details about a hero 
+    when you click their name in the list, add a section in the template that displays their details. -->
+<div *ngIf="hero">
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div>id: {{ hero.id }}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+    <button type="button" (click)="save()">save</button>
+</div>
+</div>
+<button type="button" (click)="goBack()">go back</button>
