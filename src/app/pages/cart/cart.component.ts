@@ -55,4 +55,11 @@ export class CartComponent implements OnInit {
     //return items.map((item)=> item.price * item.quantity).
     //reduce((prev ,current)=> prev + current,0);
   }
+  /*we reuse the method clearCart for clean our cart */
+  onClearCart():void {
+    this.cartService.clearCart();
+  }
+  onRemoveFromCart(item:CartItem):void {
+    this.cartService.removeFromCart(item);
+  }
 }
