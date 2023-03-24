@@ -40,7 +40,13 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService){}
 
   ngOnInit(): void {
-    this.dataSource = this.cart.items;
+    /* Now we want to susbcribe to our new  created  cart item , 
+    so let's just call this cartService , get back a new cart  
+    to update our cart with this new one , for then show this information in our cart*/
+    this.cartService.cart.subscribe((_cart:Cart)=>{
+      this.cart = _cart;
+      this.dataSource = this.cart.items;
+    })
   }
 
   getTotal(items:Array<CartItem>): number {
