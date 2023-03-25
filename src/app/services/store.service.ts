@@ -20,4 +20,5 @@ export class StoreService {
     `${STORE_BASE_URL}/products?sort=${sort}&limit=${limit}`
     )
   }
+  /*This method we are going to call in the home page component */
 }
